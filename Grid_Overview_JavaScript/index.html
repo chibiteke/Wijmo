@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GrapeCity Wijmo FlexGrid Overview</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SystemJS -->
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="systemjs.config.js"></script>
+    <script>
+        System.import('./src/app');
+    </script>
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <!-- filter/navigation -->
+        <div class="row">
+            <!-- search box -->
+            <div class="toolbar-item col-sm-3 col-md-5">
+                <div id="theSearch"></div>
+            </div>
+
+            <!-- data size -->
+            <div class="toolbar-item col-sm-3 col-md-3">
+                <div class="input-group">
+                    <span class="input-group-addon">データ数:</span>
+                    <select id="itemsCount" class="form-control">
+                        <option value="5">5</option>
+                        <option value="50">50</option>
+                        <option value="500" selected>500</option>
+                        <option value="5000">5,000</option>
+                        <option value="50000">50,000</option>
+                        <option value="100000">100,000</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- export to Excel -->
+            <div class="toolbar-item col-sm-3 col-md-2">
+                <button id="btnExportToExcel" class="btn btn-default btn-block">Excelにエクスポート</button>
+            </div>
+
+            <!-- export to PDF -->
+            <div class="toolbar-item col-sm-3 col-md-2">
+                <button id="btnExportToPdf" class="btn btn-default btn-block">PDFにエクスポート</button>
+            </div>
+        </div>
+
+        <!-- the grid -->
+        <div id="theGroupPanel"></div>
+        <div id="theGrid"></div>
+    </div>
+</body>
+
+</html>
