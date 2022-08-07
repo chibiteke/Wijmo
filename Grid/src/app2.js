@@ -10,7 +10,7 @@ function init2() {
     //
     // grid with merged headers
     var theGrid = new wjGrid.FlexGrid('#theGrid', {
-        allowMerging: 'ColumnHeaders',
+        allowMerging: ['ColumnHeaders','Cells'],
         alternatingRowStep: 0,
         autoGenerateColumns: false,
         columns: [
@@ -49,23 +49,4 @@ function init2() {
             e.cell.innerHTML = '<div class="v-center">' + html + '</div>';
         }
     });
-
-
-
-
-    // grid with merged headers
-    var theGrid = new wjGrid.FlexGrid('#traial', {
-        allowMerging: 'ColumnHeaders',
-        alternatingRowStep: 0,
-        autoGenerateColumns: false,
-        columns: [
-            { binding: 'country', header: '国', allowMerging: true },
-            { binding: 'sales', header: '売上', format: 'n2' },
-            { binding: 'expenses', header: '費用', format: 'n2' },
-        ],
-        itemsSource: [{id:1, sales: Math.random() * 100000, expenses: Math.random() * 50000}]
-    });
-
-
-
 }
