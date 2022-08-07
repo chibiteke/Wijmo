@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GrapeCity Wijmo TransposedGrid</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SystemJS -->
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="systemjs.config.js"></script>
+    <script>
+        System.import('./src/app');
+    </script>
+</head>
+<body>
+    <div class="container-fluid">
+        <h2>
+            既定のグリッド
+        </h2>
+        <p>
+            製品が行方向に表示されます。
+        </p>
+        <div id="theGrid" class="product-grid"></div>
+        <h2>
+            転置グリッド
+        </h2>
+        
+        <p>
+            製品が列方向に表示されます。
+        </p>
+        <div id="theTransposedGrid" class="product-grid"></div>
+    </div>
+</body>
+</html>

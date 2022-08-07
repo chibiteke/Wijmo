@@ -1,0 +1,22 @@
+.product-grid {
+  max-height: 2000px;
+}
+
+.product-grid .wj-rowheaders .wj-cell {
+  text-transform: uppercase;
+  font-size: 80%;
+}
+
+.product-grid .wj-cell {
+  padding: 12px;
+  border-bottom: none;
+}
+
+.product-grid .wj-cell span.rating {
+  font-size: 200%;
+  color: #e7711b;
+}
+
+.product-grid img {
+  height: 100%;
+}
