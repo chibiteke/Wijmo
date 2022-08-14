@@ -20,11 +20,11 @@ function init() {
 
 
 
-    // お試し
-    let theTrial = new MultiRow('#traial', {
-        layoutDefinition: getTrialLayoutDefinition(),
-        headerLayoutDefinition: getTrialHeaderLayoutDefinition(),
-        itemsSource: getTrialData()
-    });
+    // // お試し
+    // let theTrial = new MultiRow('#traial', {
+    //     layoutDefinition: getTrialLayoutDefinition(),
+    //     headerLayoutDefinition: getTrialHeaderLayoutDefinition(),
+    //     itemsSource: getTrialData()
+    // });
 
 }

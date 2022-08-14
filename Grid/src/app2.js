@@ -2,7 +2,7 @@ import 'bootstrap.css';
 import '@grapecity/wijmo.styles/wijmo.css';
 import './styles.css';
 import * as wjGrid from '@grapecity/wijmo.grid';
-import { getData } from './data2';
+import { getData,getColumns,getTrialData,getDate } from './data2';
 //
 document.readyState === 'complete' ? init2() : window.onload = init;
 //
@@ -46,6 +46,46 @@ function init2() {
     theGrid.formatItem.addHandler(function (s, e) {
         if (e.panel == s.columnHeaders && e.range.rowSpan > 1) {
             var html = e.cell.innerHTML;
+            e.cell.innerHTML = '<div class="v-center">' + html + '</div>';
+        }
+    });
+
+
+    // grid with merged headers
+    const count = 3;
+    const theTraial = new wjGrid.FlexGrid('#traial', {
+        allowMerging: ['ColumnHeaders','Cells'],
+        alternatingRowStep: 0,
+        autoGenerateColumns: false,
+        columns: getColumns(count),
+        itemsSource: getTrialData(count)
+    });
+
+    // create extra header row
+    const trialExtraRow = new wjGrid.Row();
+    trialExtraRow.allowMerging = true;
+    trialExtraRow.align = 'center';
+    //
+    // add extra header row to the grid
+    const trialPanel = theTraial.columnHeaders;
+    trialPanel.rows.splice(0, 0, trialExtraRow);
+    //
+    // populate the extra header row
+    for (let colIndex = 1, i=0; i < count; i++) {
+      for (let j = 0; j < 3; j++, colIndex++) {
+        trialPanel.setCellData(0, colIndex, getDate(i));
+      }
+    }
+    //
+    //
+    let col = theTraial.getColumn('product');
+    col.allowMerging = true;
+    trialPanel.setCellData(0, col.index, col.header);
+    //
+    // center-align merged header cells
+    theTraial.formatItem.addHandler(function (s, e) {
+        if (e.panel == s.columnHeaders && e.range.rowSpan > 1) {
+            const html = e.cell.innerHTML;
             e.cell.innerHTML = '<div class="v-center">' + html + '</div>';
         }
     });
