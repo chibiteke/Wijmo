@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GrapeCity Wijmo FlexGrid Selection Overview</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SystemJS -->
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="systemjs.config.js"></script>
+    <script>
+        System.import('./src/app');
+    </script>
+</head>
+<body>
+    <div class="container-fluid">
+      <label>
+        選択モード
+        <div id="selectionMode"></div>
+      </label>
+      <div id="theGrid"></div>
+      <p>
+        現在の選択範囲: <span id="currSel"></span>.
+      </p>
+      <div>
+        <button id="btnSelect" class="btn btn-default">
+          最初の4つのセルを選択
+        </button> <button id="btnListSelect" class="btn btn-default">
+          0、2、4の行を選択
+        </button>
+      </div>        
+    </div>
+</body>
+</html>
